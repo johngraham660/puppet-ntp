@@ -5,4 +5,9 @@
 # @example
 #   include ntp
 class ntp {
+
+  $ntp_service_enable = $::ntp::params::ntp_service_enable
+  $ntp_service_ensure = $::ntp::params::ntp_service_ensure
+  $ntp_config_servers = undef
+
 }
