@@ -5,4 +5,7 @@
 # @example
 #   include ntp::params
 class ntp::params {
+  $ntp_service_enable = true
+  $ntp_service_ensure = 'running'
+  $ntp_config_servers = undef
 }
