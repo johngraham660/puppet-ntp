@@ -4,5 +4,5 @@
 #
 # @example
 #   include ntp::service
-class ntp::service {
+class ntp::service inherits ntp {
 }

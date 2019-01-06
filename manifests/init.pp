@@ -13,10 +13,9 @@ class ntp (
 
 ) inherits ntp::params {
 
-  class{'ntp::install': }
-  -> class{'ntp::config': }
-  -> class{'ntp::service': }
-  ~> Class['ntp']
+  include ntp::install
+  include ntp::config
+  include ntp::service
 
   validate_bool($ntp_service_enable)
   validate_re($ntp_service_ensure, [ '^running$', '^stopped$' ])

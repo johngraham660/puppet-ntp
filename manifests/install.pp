@@ -4,5 +4,5 @@
 #
 # @example
 #   include ntp::install
-class ntp::install {
+class ntp::install inherits ntp {
 }
