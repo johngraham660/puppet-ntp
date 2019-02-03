@@ -7,17 +7,13 @@
 
 class ntp (
 
-  $ntp_service_enable = $::ntp::params::ntp_service_enable,
-  $ntp_service_ensure = $::ntp::params::ntp_service_ensure,
-  $ntp_config_servers = undef,
+  Boolean $ntp_service_enable,
+  Enum['running', 'stopped'] $ntp_service_ensure,
+  Array $ntp_config_servers,
 
-) inherits ntp::params {
-
+) {
   include ntp::install
   include ntp::config
   include ntp::service
-
-  validate_bool($ntp_service_enable)
-  validate_re($ntp_service_ensure, [ '^running$', '^stopped$' ])
 }
 
