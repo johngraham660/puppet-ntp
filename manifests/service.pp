@@ -5,4 +5,8 @@
 # @example
 #   include ntp::service
 class ntp::service inherits ntp {
+
+  service { 'ntp':
+    ensure => 'running'
+  }
 }

@@ -5,4 +5,9 @@
 # @example
 #   include ntp::config
 class ntp::config inherits ntp {
+
+  file { '/etc/ntp.conf':
+    ensure => 'file',
+
+  }
 }
